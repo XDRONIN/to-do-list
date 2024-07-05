@@ -6,7 +6,10 @@ import { useState } from "react";
 function App() {
   const [showInput, setShowInput] = useState(false);
   const handleClick = () => {
-    setShowInput(true);
+    setShowInput(!showInput);
+  };
+  const hideInput = () => {
+    setShowInput(!showInput);
   };
   return (
     <>
@@ -16,7 +19,7 @@ function App() {
       </u>
       <List />
       <Add onClick={handleClick} />
-      {showInput && <HandleClick />}
+      {showInput && <HandleClick onclick={hideInput} />}
     </>
   );
 }
