@@ -12,6 +12,13 @@ const HandleClick = ({ onclick }) => {
     setTaskDate(e.target.value);
     console.log(taskDate);
   }
+  function setList(taskData, taskDate) {
+    const task = {
+      data: taskData,
+      date: taskDate,
+    };
+    <List tasks={task} />;
+  }
   return (
     <>
       <div className="inputData">
@@ -34,8 +41,8 @@ const HandleClick = ({ onclick }) => {
         <br />
         <input
           type="submit"
-          onClick={(e) => {
-            onclick();
+          onClick={() => {
+            onclick(), setList(taskData, taskDate);
           }}
         ></input>
       </div>
