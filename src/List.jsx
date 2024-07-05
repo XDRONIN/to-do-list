@@ -1,5 +1,8 @@
-import { useState } from "react";
-function List() {
-  return <></>;
+function List(props) {
+  return (
+    <>
+      <div className="listElements"></div>
+    </>
+  );
 }
 export default List;
