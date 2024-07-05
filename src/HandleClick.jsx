@@ -1,7 +1,12 @@
 const HandleClick = () => {
   return (
     <>
-      <div className="inputData">INPUT</div>;
+      <div className="inputData">
+        <input type="text" placeholder="Task details"></input>
+        <br />
+        <input type="date"></input>
+      </div>
+      ;
     </>
   );
 };
