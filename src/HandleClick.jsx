@@ -1,31 +1,36 @@
 import { useState } from "react";
 import List from "./List";
 
-const HandleClick = ({ onclick }) => {
+const HandleClick = ({ onclick, setShowData, SetTaskData, SetTaskDate }) => {
   const [taskData, setTaskData] = useState("");
   const [taskDate, setTaskDate] = useState("");
+  function set() {
+    SetTaskData(taskData);
+    SetTaskDate(taskDate);
+    //console.log(`${taskData} Handle click`);
+  }
   function changeHandleData(e) {
     setTaskData(e.target.value);
-    console.log(taskData);
+    //console.log(taskData);
   }
   function changeHandleDate(e) {
     setTaskDate(e.target.value);
-    console.log(taskDate);
+    //console.log(taskDate);
   }
-  function setList(taskData, taskDate) {
-    const task = {
-      data: taskData,
-      date: taskDate,
-    };
-    <List tasks={task} />;
-  }
+  //function setList(taskData, taskDate) {
+  //const task = {
+  // data: taskData,
+  // date: taskDate,
+  //};
+  //  }
+
   return (
     <>
       <div className="inputData">
         <input
           type="text"
-          placeholder="Task details"
           value={taskData}
+          placeholder="Task details"
           onChange={(e) => {
             changeHandleData(e);
           }}
@@ -42,7 +47,7 @@ const HandleClick = ({ onclick }) => {
         <input
           type="submit"
           onClick={() => {
-            onclick(), setList(taskData, taskDate);
+            onclick(), setShowData(true), set();
           }}
         ></input>
       </div>
