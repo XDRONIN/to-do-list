@@ -1,8 +1,10 @@
 function Add({ onClick }) {
   return (
-    <button className="add" onClick={onClick}>
-      +
-    </button>
+    <div className="buttContainer">
+      <button className="button" onClick={onClick}>
+        +
+      </button>
+    </div>
   );
 }
 export default Add;

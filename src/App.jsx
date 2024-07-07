@@ -26,7 +26,9 @@ function App() {
     <>
       <u>
         {" "}
-        <h1>To Do List</h1>
+        <center>
+          <h1>To Do List</h1>
+        </center>
       </u>
 
       <Add onClick={handleClick} />

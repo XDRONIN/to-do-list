@@ -2,8 +2,12 @@ function List({ taskData, taskDate }) {
   return (
     <>
       <div className="listElements">
-        <p>{taskData}</p>
-        <p>{taskDate}</p>
+        <p>TASK- {taskData}</p>
+        <p>COMPLETE BY- {taskDate}</p>
+        <label class="container">
+          <input type="checkbox" />
+          <div class="checkmark"></div>
+        </label>
       </div>
       {console.log("List rendered")}
     </>

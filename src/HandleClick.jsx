@@ -1,6 +1,4 @@
 import { useState } from "react";
-import List from "./List";
-import { TaskType } from "@google/generative-ai";
 
 const HandleClick = ({ onclick, setShowData }) => {
   const [taskData, setTaskData] = useState("");
@@ -26,6 +24,7 @@ const HandleClick = ({ onclick, setShowData }) => {
       <div className="inputData">
         <input
           type="text"
+          className="input"
           value={taskData}
           placeholder="Task details"
           onChange={(e) => {
@@ -35,6 +34,7 @@ const HandleClick = ({ onclick, setShowData }) => {
         <br />
         <input
           type="date"
+          className="input"
           value={taskDate}
           onChange={(e) => {
             changeHandleDate(e);
@@ -43,6 +43,7 @@ const HandleClick = ({ onclick, setShowData }) => {
         <br />
         <input
           type="submit"
+          className="button"
           onClick={() => {
             onclick(taskData, taskDate);
           }}
