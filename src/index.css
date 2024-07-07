@@ -12,6 +12,7 @@ body {
   display: flex;
   flex-direction: column;
   z-index: 1;
+  text-align: center;
 
   justify-content: center;
   position: absolute;
