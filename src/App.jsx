@@ -4,17 +4,21 @@ import HandleClick from "./HandleClick";
 import { useState } from "react";
 
 function App() {
-  const [taskData, setTaskData] = useState("");
-  const [taskDate, setTaskDate] = useState("");
+  //const [taskData, setTaskData] = useState("");
+  //const [taskDate, setTaskDate] = useState("");
 
   const [showInput, setShowInput] = useState(false);
-  const [showData, setShowData] = useState(false);
+  //const [showData, setShowData] = useState(false);
+  const [tasks, setTasks] = useState([]);
 
   const handleClick = () => {
     setShowInput(true);
   };
-  const hideInput = () => {
+  const hideInput = (taskData, taskDate) => {
     setShowInput(false);
+    //setTaskData(taskData);
+    // setTaskDate(taskDate);
+    setTasks((prevTasks) => [...prevTasks, { taskData, taskDate }]);
     //console.log(`${taskData} app`);
   };
 
@@ -26,15 +30,11 @@ function App() {
       </u>
 
       <Add onClick={handleClick} />
-      {showInput && (
-        <HandleClick
-          onclick={hideInput}
-          setShowData={setShowData}
-          SetTaskData={setTaskData}
-          SetTaskDate={setTaskDate}
-        />
-      )}
-      {showData && <List taskData={taskData} taskDate={taskDate} />}
+      {showInput && <HandleClick onclick={hideInput} />}
+
+      {tasks.map((task, index) => (
+        <List key={index} taskData={task.taskData} taskDate={task.taskDate} />
+      ))}
     </>
   );
 }
