@@ -2,6 +2,7 @@ const express = require('express');
 const { Pool } = require('pg');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
 const port = 3001;
@@ -16,6 +17,8 @@ const pool = new Pool({
 
 app.use(cors());
 app.use(bodyParser.json());
+
+app.use(express.static(path.join(__dirname, '..', 'dist')));
 
 app.get('/tasks', async (req, res) => {
   try {
