@@ -1,23 +1,11 @@
 import { useState } from "react";
 
-const HandleClick = ({ onclick, setShowData }) => {
+const HandleClick = ({ onclick }) => {
   const [taskData, setTaskData] = useState("");
-  const [taskDate, setTaskDate] = useState("");
 
   function changeHandleData(e) {
     setTaskData(e.target.value);
-    //console.log(taskData);
   }
-  function changeHandleDate(e) {
-    setTaskDate(e.target.value);
-    //console.log(taskDate);
-  }
-  //function setList(taskData, taskDate) {
-  //const task = {
-  // data: taskData,
-  // date: taskDate,
-  //};
-  //  }
 
   return (
     <>
@@ -36,19 +24,10 @@ const HandleClick = ({ onclick, setShowData }) => {
         ></input>
         <br />
         <input
-          type="date"
-          className="input"
-          value={taskDate}
-          onChange={(e) => {
-            changeHandleDate(e);
-          }}
-        ></input>
-        <br />
-        <input
           type="submit"
           className="button"
           onClick={() => {
-            onclick(taskData, taskDate);
+            onclick(taskData);
           }}
         ></input>
       </div>
