@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: react-todo-app
-          image: your-dockerhub-username/react-todo-app:latest # IMPORTANT: Replace with your Docker Hub image
+          image: docker pull xdronin/react-todo-app:latest # IMPORTANT: Replace with your Docker Hub image
           ports:
             - containerPort: 3001
           env:
