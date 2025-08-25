@@ -14,7 +14,7 @@ const port = 3001;
 
 const pool = new Pool({
   user: 'postgres',
-  host: 'db',
+  host: process.env.DB_HOST || 'postgres-service',
   database: 'todo',
   password: 'password',
   port: 5432,
